@@ -4,12 +4,14 @@
   "description": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/startServer.js"
+    "start": "cross-env NODE_ENV=production node backend/startServer.js",
+    "dev": "cross-env NODE_ENV=development node backend/startServer.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cross-env": "^7.0.2",
     "express": "^4.17.1"
   }
 }
