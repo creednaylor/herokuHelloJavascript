@@ -1,11 +1,38 @@
-const express = require('express')
-const path = require('path');
-const app = express()
-const config = require('../config/config');
-const port = config.port;
+const importedExpress = require('express')
+const importedPath = require('path');
+const importedStringifyObject = require('stringify-object')
+// const importedUtil = require('util')
+const expressApp = importedExpress()
+const configFile = require('../aConfigFiles/config');
+const portStr = configFile.portStr;
 
-app.get('/canary', (req, res) => res.send('The server is running...'))
 
-app.use('/', express.static(path.join(__dirname, '../frontend')))
+expressApp.get('/canary', (reqObj, resObj) => {
+    resObj.send('The server is running...');
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
+    printingOn = false;
+
+    if (printingOn) {
+
+        lengthOfStringToPrint = 100;
+
+        console.log('Printed reqObj: ' + importedStringifyObject(reqObj, {
+            indent: '  ',
+            singleQuotes: false
+        }).substr(0, lengthOfStringToPrint));
+    
+    
+        console.log('Printed resObj: ' + importedStringifyObject(resObj, {
+            indent: '  ',
+            singleQuotes: false
+        }).substr(0, lengthOfStringToPrint));
+    }
+        
+})
+
+
+pathToThisJavascriptFileDirectory = __dirname
+expressApp.use('/', importedExpress.static(importedPath.join(pathToThisJavascriptFileDirectory, '../frontend')))
+
+
+expressApp.listen(portStr, () => console.log(`Example app listening at http://localhost:${portStr}`))

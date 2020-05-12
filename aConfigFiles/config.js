@@ -4,7 +4,7 @@ function getCustomPort() {
         case 'development': return 3000;
         default: throw new Error(
             `process.env.NODE_ENV needs to be either production or development. 
-            It is ${process.env.NODE_ENV}`
+            Instead, it is ${process.env.NODE_ENV}`
         );
     }
 }
@@ -14,7 +14,7 @@ function getPort() {
 }
 
 const configObj = {
-    port: getPort(),
+    portStr: getPort(),
 }
 
 module.exports = configObj;
