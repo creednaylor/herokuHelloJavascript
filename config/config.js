@@ -1,4 +1,4 @@
-function getPort() {
+function getCustomPort() {
     switch(process.env.NODE_ENV) {
         case 'production': return 8000;
         case 'development': return 3000;
@@ -7,6 +7,10 @@ function getPort() {
             It is ${process.env.NODE_ENV}`
         );
     }
+}
+
+function getPort() {
+    return process.env.PORT || getCustomPort();
 }
 
 const configObj = {
