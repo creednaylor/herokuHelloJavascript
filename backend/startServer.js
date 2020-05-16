@@ -30,7 +30,8 @@ expressApp.get('/cat', function(reqObj, resObj) {
 
     resObj.json({
         'cat eyes': 'yellow',
-        'collar': 'red'
+        'collar': 'red',
+        'crown': 'diamond-studded'
     });
         
 })
