@@ -1,13 +1,13 @@
-function main() {
-  console.log('Hola tu! Como estas?')
+(async function main() {
+  async function getCatData() {
+    try {
+      return (await axios.get('/cat')).data
+    } catch(e) {
+      return null;
+    }
+  }
+  
+  var cat = await getCatData();
 
-  axios.get('/cat').then(function(response) {
-    var data = response.data;
-    console.log(data)
-  })
-
-}
-
-
-
-main()
+  console.log(cat)
+})()
