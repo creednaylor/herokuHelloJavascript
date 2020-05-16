@@ -1,9 +1,13 @@
+//run from command line using:
+//node startServer.js&&set NODE_ENV=production
+
+
 const expressLibrary = require('express')
 const pathLibrary = require('path');
 const stringifyLibrary = require('stringify-object')
 // const importedUtil = require('util')
 const expressApp = expressLibrary()
-const importedConfigFile = require('../aConfigFiles/config');
+const importedConfigFile = require('../_configFiles/configurePort');
 const portStr = importedConfigFile.portStr;
 
 pathToThisJavascriptFileDirectory = __dirname
